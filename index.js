@@ -52,7 +52,7 @@ function promptUser() {
         {
           type: "input",
           message:
-            "What text would you like you logo to display? (Enter up to three characters)",
+            "Enter up to three characters to display on your logo",
           name: "text",
         },
         // Text color prompt
@@ -65,7 +65,7 @@ function promptUser() {
         // Shape choice prompt
         {
           type: "list",
-          message: "What shape would you like the logo to render?",
+          message: "Choose a logo shape to render",
           choices: ["Triangle", "Square", "Circle"],
           name: "shape",
         },
@@ -73,7 +73,7 @@ function promptUser() {
         {
           type: "input",
           message:
-            "Choose shapes color (Enter color keyword OR a hexadecimal number)",
+            "Choose the color of the shape (Enter color keyword OR a hexadecimal number)",
           name: "shapeBgColor",
         },
       ])
