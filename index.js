@@ -1,8 +1,8 @@
 //import inquirer 
 const inquirer = require('inquirer');
 
-//install increment which allows for automatic filename increments instead of overwriting
-const increment = require('add-filename-increment');
+//install date-fns which allows for date formatting to add to filename to prevent overwriting
+const { format } = require('date-fns');
 
 //import file system 
 const fs = require('fs');
@@ -12,6 +12,10 @@ const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
 //Function writes the SVG file using the answers from the inquirer prompts given by the user
 function writeToFile(fileName, answers) {
+    //add a timestamp to the filename to make it unique
+    const timestamp = format(new Date(), 'yyyyMMdd_HHmmss');
+    const newFileName = `${fileName.replace('.svg', '')}_${timestamp}.svg`;
+
     //create file as empty string
     let svgString = '';
     //set width and height of the logo container
@@ -23,10 +27,10 @@ function writeToFile(fileName, answers) {
     
     //takes user input from choices and adds the shape properties and color to svgString
     let shapePick;
-    if (answers.shape === 'triangle') {
+    if (answers.shape === 'Triangle') {
         shapePick = new Triangle();
         svgString += `<polygon points='150, 18 244, 182 56, 182' fill='${answers.shapeBgColor}'/>`;
-    } else if (answers.shape === 'square') {
+    } else if (answers.shape === 'Square') {
         shapePick = new Square();
         svgString += `<rect x='73' y='40'  width='160' height='160' fill='${answers.shapeBgColor}'/>`;
     } else {
@@ -42,8 +46,8 @@ function writeToFile(fileName, answers) {
     svgString += "</svg>";
 
     // Using file system module to generate svg file, takes in file name given in the promptUser function, the svg string, and a ternary operator which handles logging any errors, or a "Generated logo.svg" message to the console  
-    fs.writeFile(fileName, svgString, (err) => {
-        err ? console.log(err) : console.log("Generated logo.svg");
+    fs.writeFile(newFileName, svgString, (err) => {
+        err ? console.log(err) : console.log(`Generated ${newFileName}`);
     });
 }
 
