@@ -1,6 +1,9 @@
 //import inquirer 
 const inquirer = require('inquirer');
 
+//install increment which allows for automatic filename increments instead of overwriting
+const increment = require('add-filename-increment');
+
 //import file system 
 const fs = require('fs');
 
@@ -22,13 +25,13 @@ function writeToFile(fileName, answers) {
     let shapePick;
     if (answers.shape === 'triangle') {
         shapePick = new Triangle();
-        svgString += `<polygon points='150, 18 244, 182 56, 182' fill='${answers.shapeBgColor}"/>`;
+        svgString += `<polygon points='150, 18 244, 182 56, 182' fill='${answers.shapeBgColor}'/>`;
     } else if (answers.shape === 'square') {
         shapePick = new Square();
-        svgString += `<rect x='73' y='40'  width='160' height='160' fill='${answers.shapeBgColor}"/>`;
+        svgString += `<rect x='73' y='40'  width='160' height='160' fill='${answers.shapeBgColor}'/>`;
     } else {
         shapePick = new Circle();
-        svgString += `<circle cx='150' cy='115' r='80' fill='${answers.shapeBgColor}"/>`;
+        svgString += `<circle cx='150' cy='115' r='80' fill='${answers.shapeBgColor}'/>`;
     }
 
     // <text> tag gives rise to text alignment, text-content/text-color taken in from user prompt and gives default font size of "40"
