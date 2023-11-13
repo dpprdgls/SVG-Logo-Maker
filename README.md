@@ -20,10 +20,6 @@ Jest v29.7
 
 Clone the repository https://github.com/dpprdgls/SVG-Logo-Maker.git
 
-## Features
-
-Features of this application include the users ability to generate logos quickly and easily through the use of SVG files, entirely from the command line. No UI (user interface) needed, and no front end tools needed.  
-
 ## Usage Information
 
 Download the project files and use an IDE to open the project folder. Preview the index.html file in browser for a demonstration of the project code. 
