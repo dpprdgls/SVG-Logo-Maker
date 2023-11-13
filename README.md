@@ -10,10 +10,10 @@ This application was created to provide a user with a simple application to crea
 
 This project uses the following:
 
-Node.js 
-Inquirer v8.2.4
-FS module
-Date-FNS module
+Node.js\
+Inquirer v8.2.4\
+FS module\
+Date-FNS module\
 Jest v29.7
 
 ## Installation
