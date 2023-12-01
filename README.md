@@ -19,23 +19,23 @@ Jest v29.7
 
 ## Installation
 
-To generate your own README, `git clone` the repo down to your local so you have the Node project on your local.
+To generate your own SVG Logo, `git clone` the repo down to your local drive so you have the Node project on your local drive.
 
 Run `npm install` in order to install the following npm package dependencies as specified in the `package.json`:
 
   * [`inquirer`](https://www.npmjs.com/package/inquirer) will prompt you for your inputs from the command line.
 
 
-The application will start by running `node index.js` in the command line.
-
 ## Usage Information
 
 
-![GIF Demo](SVG Logo Maker.gif)
+![GIF Demo](SVG-Logo-Maker.gif)
 
 [Video Link](https://drive.google.com/file/d/1ZQ55TvfJYuJQrPqApeE4bczkwhPQ7YPu/view)
 
-Download the project files and use an IDE to open the project folder. Preview the index.html file in browser for a demonstration of the project code. 
+
+
+The application will start by running `node index.js` in the command line.
 
 ## License
 
